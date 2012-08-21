@@ -1,5 +1,0 @@
-misclib: Miscellaneous Library Routines
-
-Whenever I come across intereseting algorithm or piece of code, I try to implement that myself. This project is compilation of all the different pieces of codes I have written.
-
-Source files are written in C, C++, Python and many different language. The language was chosen with ease of use for that particular problem.
