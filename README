@@ -1,0 +1,3 @@
+misclib: Miscellaneous Library Routines
+
+Algorithms to manipulate string, trees, lists among other things are implemented in this library.
