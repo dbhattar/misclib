@@ -75,3 +75,39 @@ void inplace_reverse(char s[]) {
    }
 }
 
+static int *bits = NULL;
+static int size = 0;
+static int done = 0, cardinality = 0;
+void initialize_set(int _size) {
+	int i;
+	if(bits != NULL)
+		free(bits);
+	size = _size;
+	bits = (int *)malloc(sizeof(int)*size);
+	for(i = 0; i < size; ++i)
+		bits[i] = 0;
+}
+
+int *next_subset() {
+	if(done == 1) {
+		return bits;
+	}
+	else {
+		int i;
+		for(i = 0; i < size; ++i) {
+			if(bits[i] == 0) {
+				bits[i] = 1;
+				cardinality += 1;
+				if(cardinality == size)
+					done = 1;
+				return bits;
+			}
+			else {
+				bits[i] = 0;
+				cardinality -= 1;
+			}
+		}
+	}
+	//should never reach here;
+	return bits;
+}
