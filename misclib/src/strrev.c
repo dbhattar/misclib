@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#include "misclib.h"
 int _strlen(char *s) {
    int len = 0;
    while(*s) {
@@ -11,7 +12,7 @@ int _strlen(char *s) {
    return len;
 }
 
-void swap(char *a, char *b) {
+static void swap(char *a, char *b) {
     char c = *a;
     *a = *b;
     *b = c;
@@ -30,7 +31,7 @@ char *strrev(char s[]) {
    return rs;
 }
 
-char *next_space(char *s) {
+static char *next_space(char *s) {
    while(*s) {
       if(isspace(*s))
          return s;
@@ -39,7 +40,7 @@ char *next_space(char *s) {
    return s;
 }
 
-void istrrev(char *first, char *last) {
+static void istrrev(char *first, char *last) {
    while(first < last) {
       swap(first, last);
       ++first;

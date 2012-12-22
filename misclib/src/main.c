@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "misclib.h"
 
 void main() {
    char s[] = "Hello world!";
